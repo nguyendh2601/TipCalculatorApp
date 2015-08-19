@@ -15,23 +15,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipPercentage: UISegmentedControl!
     
+    var tipPercentages = [0.18, 0.2, 0.25]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00"
         billField.becomeFirstResponder()
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let defaultTipPercent = defaults.valueForKey("defaultTipAmount") as? String {
+            for var index = 0; index < tipPercentages.count; ++index {
+                if ((defaultTipPercent as NSString).doubleValue == tipPercentages[index]) {
+                    tipPercentage.selectedSegmentIndex = index;
+                    break
+                }
+            }
+            println(defaultTipPercent) // Some String Value
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(Bool())
+        println("disappear")
+    }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
-        var tipPercentages = [0.18, 0.2, 0.22]
         var tipPercent = tipPercentages[tipPercentage.selectedSegmentIndex]
-        
         
         var billAmount = (billField.text as NSString).doubleValue
         var tip = billAmount * tipPercent

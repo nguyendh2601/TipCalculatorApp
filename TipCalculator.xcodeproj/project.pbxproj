@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541FF0F31B84F0050083B01E /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FF0F21B84F0050083B01E /* SettingsController.swift */; };
 		54F2F0041B7A0DF800D0C6BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2F0031B7A0DF800D0C6BB /* AppDelegate.swift */; };
 		54F2F0061B7A0DF800D0C6BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2F0051B7A0DF800D0C6BB /* ViewController.swift */; };
 		54F2F0091B7A0DF800D0C6BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F2F0071B7A0DF800D0C6BB /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		541FF0F21B84F0050083B01E /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		54F2EFFE1B7A0DF800D0C6BB /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F2F0021B7A0DF800D0C6BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54F2F0031B7A0DF800D0C6BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				54F2F00A1B7A0DF800D0C6BB /* Images.xcassets */,
 				54F2F00C1B7A0DF800D0C6BB /* LaunchScreen.xib */,
 				54F2F0011B7A0DF800D0C6BB /* Supporting Files */,
+				541FF0F21B84F0050083B01E /* SettingsController.swift */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541FF0F31B84F0050083B01E /* SettingsController.swift in Sources */,
 				54F2F0061B7A0DF800D0C6BB /* ViewController.swift in Sources */,
 				54F2F0041B7A0DF800D0C6BB /* AppDelegate.swift in Sources */,
 			);
