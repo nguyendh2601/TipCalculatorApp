@@ -35,6 +35,7 @@ class SettingsController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func onSettingChange(sender: AnyObject) {
         var tipPercent = tipPercentages[defaultTipAmount.selectedSegmentIndex]
 
@@ -45,4 +46,7 @@ class SettingsController: UIViewController {
         defaults.synchronize()
     }
     
+    @IBAction func onDismiss(sender: AnyObject) {
+        println("Backkkk")
+    }
 }

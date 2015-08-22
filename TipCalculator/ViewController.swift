@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+          println("view did load")
         billField.becomeFirstResponder()
         
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(Bool())
-        println("disappear")
+         println("view did disappear")
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
@@ -55,5 +56,15 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        println("view will appear")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        println("view did appear")
+    }    
 }
 
