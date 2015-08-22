@@ -45,8 +45,4 @@ class SettingsController: UIViewController {
         
         defaults.synchronize()
     }
-    
-    @IBAction func onDismiss(sender: AnyObject) {
-        println("Backkkk")
-    }
 }

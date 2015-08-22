@@ -20,15 +20,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-          println("view did load")
         billField.becomeFirstResponder()
-        
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let defaultTipPercent = defaults.valueForKey("defaultTipAmount") as? String {
             for var index = 0; index < tipPercentages.count; ++index {
                 if ((defaultTipPercent as NSString).doubleValue == tipPercentages[index]) {
                     tipPercentage.selectedSegmentIndex = index;
+                    tipPercentage.didChangeValueForKey(defaultTipPercent)
                     break
                 }
             }
@@ -40,14 +39,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(Bool())
-         println("view did disappear")
-    }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
         var tipPercent = tipPercentages[tipPercentage.selectedSegmentIndex]
+        println(tipPercent)
         
         var billAmount = (billField.text as NSString).doubleValue
         var tip = billAmount * tipPercent
@@ -56,15 +51,5 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        println("view will appear")
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        println("view did appear")
-    }    
 }
 
